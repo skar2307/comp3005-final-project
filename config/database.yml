@@ -81,4 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: comp3005_final_project_production
+  url: <%= ENV['DATABASE_URL'] %>
