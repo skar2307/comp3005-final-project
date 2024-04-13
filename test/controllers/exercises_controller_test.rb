@@ -17,7 +17,7 @@ class ExercisesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create exercise" do
     assert_difference("Exercise.count") do
-      post exercises_url, params: { exercise: { reps_per_set: @exercise.reps_per_set, sets: @exercise.sets, title: @exercise.title } }
+      post exercises_url, params: { exercise: { reps_per_set: @exercise.reps_per_set, sets: @exercise.sets, name: @exercise.name } }
     end
 
     assert_redirected_to exercise_url(Exercise.last)
@@ -34,7 +34,7 @@ class ExercisesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update exercise" do
-    patch exercise_url(@exercise), params: { exercise: { reps_per_set: @exercise.reps_per_set, sets: @exercise.sets, title: @exercise.title } }
+    patch exercise_url(@exercise), params: { exercise: { reps_per_set: @exercise.reps_per_set, sets: @exercise.sets, name: @exercise.name } }
     assert_redirected_to exercise_url(@exercise)
   end
 

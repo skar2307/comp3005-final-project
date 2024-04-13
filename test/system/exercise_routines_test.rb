@@ -16,7 +16,7 @@ class ExerciseRoutinesTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @exercise_routine.description
     fill_in "Days per week", with: @exercise_routine.days_per_week
-    fill_in "Title", with: @exercise_routine.title
+    fill_in "Name", with: @exercise_routine.name
     click_on "Create Exercise routine"
 
     assert_text "Exercise routine was successfully created"
@@ -29,7 +29,7 @@ class ExerciseRoutinesTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @exercise_routine.description
     fill_in "Days per week", with: @exercise_routine.days_per_week
-    fill_in "Title", with: @exercise_routine.title
+    fill_in "Name", with: @exercise_routine.name
     click_on "Update Exercise routine"
 
     assert_text "Exercise routine was successfully updated"

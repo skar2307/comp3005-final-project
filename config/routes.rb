@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :scaffolds
+  resources :health_metrics
+  resources :equipment
   resources :exercise_routines
   resources :exercises
   devise_for :members

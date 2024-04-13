@@ -16,7 +16,7 @@ class ExercisesTest < ApplicationSystemTestCase
 
     fill_in "Reps per set", with: @exercise.reps_per_set
     fill_in "Sets", with: @exercise.sets
-    fill_in "Title", with: @exercise.title
+    fill_in "Name", with: @exercise.name
     click_on "Create Exercise"
 
     assert_text "Exercise was successfully created"
@@ -29,7 +29,7 @@ class ExercisesTest < ApplicationSystemTestCase
 
     fill_in "Reps per set", with: @exercise.reps_per_set
     fill_in "Sets", with: @exercise.sets
-    fill_in "Title", with: @exercise.title
+    fill_in "Name", with: @exercise.name
     click_on "Update Exercise"
 
     assert_text "Exercise was successfully updated"

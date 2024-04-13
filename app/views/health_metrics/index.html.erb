@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Health metrics</h1>
+
+<div id="health_metrics">
+  <% @health_metrics.each do |health_metric| %>
+    <%= render health_metric %>
+    <p>
+      <%= link_to "Show this health metric", health_metric %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New health metric", new_health_metric_path %>

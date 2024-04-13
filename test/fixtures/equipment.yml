@@ -2,10 +2,12 @@
 
 one:
   name: MyString
-  days_per_week: 1
   description: MyText
+  most_recently_used: 2024-04-13
+  most_recently_maintained: 2024-04-13
 
 two:
   name: MyString
-  days_per_week: 1
   description: MyText
+  most_recently_used: 2024-04-13
+  most_recently_maintained: 2024-04-13

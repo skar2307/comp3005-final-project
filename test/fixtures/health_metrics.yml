@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  days_per_week: 1
-  description: MyText
+  value: 1
+  members: one
 
 two:
   name: MyString
-  days_per_week: 1
-  description: MyText
+  value: 1
+  members: two

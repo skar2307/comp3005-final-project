@@ -66,6 +66,6 @@ class ExerciseRoutinesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def exercise_routine_params
-      params.require(:exercise_routine).permit(:title, :days_per_week, :description, exercise_ids: [])
+      params.require(:exercise_routine).permit(:name, :days_per_week, :description, exercise_ids: [])
     end
 end

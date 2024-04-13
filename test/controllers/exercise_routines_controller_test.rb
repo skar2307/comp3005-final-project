@@ -17,7 +17,7 @@ class ExerciseRoutinesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create exercise_routine" do
     assert_difference("ExerciseRoutine.count") do
-      post exercise_routines_url, params: { exercise_routine: { description: @exercise_routine.description, days_per_week: @exercise_routine.days_per_week, title: @exercise_routine.title } }
+      post exercise_routines_url, params: { exercise_routine: { description: @exercise_routine.description, days_per_week: @exercise_routine.days_per_week, name: @exercise_routine.name } }
     end
 
     assert_redirected_to exercise_routine_url(ExerciseRoutine.last)
@@ -34,7 +34,7 @@ class ExerciseRoutinesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update exercise_routine" do
-    patch exercise_routine_url(@exercise_routine), params: { exercise_routine: { description: @exercise_routine.description, days_per_week: @exercise_routine.days_per_week, title: @exercise_routine.title } }
+    patch exercise_routine_url(@exercise_routine), params: { exercise_routine: { description: @exercise_routine.description, days_per_week: @exercise_routine.days_per_week, name: @exercise_routine.name } }
     assert_redirected_to exercise_routine_url(@exercise_routine)
   end
 
