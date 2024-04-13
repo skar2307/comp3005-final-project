@@ -10,24 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_12_045535) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_13_185106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "members", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "phone_number"
-    t.integer "height"
-    t.integer "weight"
+  create_table "exercise_routine_junctions", force: :cascade do |t|
+    t.bigint "exercise_routine_id", null: false
+    t.bigint "exercise_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_members_on_user_id"
+    t.index ["exercise_id"], name: "index_exercise_routine_junctions_on_exercise_id"
+    t.index ["exercise_routine_id"], name: "index_exercise_routine_junctions_on_exercise_routine_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "exercise_routines", force: :cascade do |t|
+    t.string "name"
+    t.integer "days_per_week"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.integer "sets"
+    t.integer "reps_per_set"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+  end
+
+  create_table "members", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -35,8 +48,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_12_045535) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.index ["email"], name: "index_members_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "exercise_routine_junctions", "exercise_routines"
+  add_foreign_key "exercise_routine_junctions", "exercises"
 end

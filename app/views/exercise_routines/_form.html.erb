@@ -1,0 +1,39 @@
+<%= form_with(model: exercise_routine) do |form| %>
+  <% if exercise_routine.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(exercise_routine.errors.count, "error") %> prohibited this exercise_routine from being saved:</h2>
+
+      <ul>
+        <% exercise_routine.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :days_per_week, style: "display: block" %>
+    <%= form.number_field :days_per_week %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <% @exercises.each do |exercise| %>
+    <div>
+      <%= check_box_tag "exercise_routine[exercise_ids][]", exercise.id, @exercise_routine.exercises.include?(exercise) %>
+      <%= exercise.name %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

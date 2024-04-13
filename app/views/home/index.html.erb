@@ -1,4 +1,9 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="card text-center">
+    <div class="card-header">
+        <h1>Welcome to THE Health & Fitness Management System!</h1>
 
-First Rails page baby....
+        <%= link_to "Log in", new_member_session_path, class: "btn btn-primary btn-lg" %><br />
+        <br />
+        <%= link_to "Sign up", new_member_registration_path, class: "btn btn-primary btn-lg" %><br />
+    </div>
+</div>

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :members
+  resources :exercise_routines
+  resources :exercises
+  devise_for :members
   get 'home/index'
+  get 'home/hub'
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

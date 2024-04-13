@@ -6,39 +6,39 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Members", members_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Add Member", new_member_path, class: "nav-link" %>
-        </li>
-        <% if user_signed_in? %>
-            <li class="nav-item">
-                <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-                <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
-            </li>
-        <% else %>
-            <li class="nav-item">
-                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-            <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
-            </li>
-        <% end %>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
+        <li class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            User Management
+          </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <% if member_signed_in? %>
+              <li>
+                <%= button_to "Sign Out", destroy_member_session_path, method: :delete, class: "dropdown-item" %>
+              </li>
+              <li>
+                <%= link_to "Edit Profile", edit_member_registration_path, class: "dropdown-item" %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Sign Up", new_member_registration_path, class: "dropdown-item" %>
+              </li>
+              <li>
+                <%= link_to "Sign In", new_member_session_path, class: "dropdown-item" %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Exercise Routines
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to "Create Routine", new_exercise_routine_path, class: "dropdown-item" %>
+            </li>
+            <li>
+              <%= link_to "Create Exercise", new_exercise_path, class: "dropdown-item" %>
+            </li>
           </ul>
         </li>
         <li class="nav-item">
