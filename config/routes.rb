@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :scaffolds
+  resources :group_classes
+  resources :personal_training_sessions
+  resources :payment_methods
+  devise_for :trainers
+  resources :room_bookings
+  resources :rooms
+  resources :fitness_goals
   resources :health_metrics
   resources :equipment
   resources :exercise_routines

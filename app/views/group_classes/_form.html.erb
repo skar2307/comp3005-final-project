@@ -1,0 +1,47 @@
+<%= form_with(model: group_class) do |form| %>
+  <% if group_class.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(group_class.errors.count, "error") %> prohibited this group_class from being saved:</h2>
+
+      <ul>
+        <% group_class.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div>
+    <%= form.label :start_time, style: "display: block" %>
+    <%= form.datetime_field :start_time %>
+  </div>
+
+  <div>
+    <%= form.label :end_time, style: "display: block" %>
+    <%= form.datetime_field :end_time %>
+  </div>
+
+  <div>
+    <%= form.label :is_recurring, style: "display: block" %>
+    <%= form.check_box :is_recurring %>
+  </div>
+
+  <div>
+    <%= form.label :trainers_id, style: "display: block" %>
+    <%= form.text_field :trainers_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

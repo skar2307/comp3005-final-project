@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ScaffoldTest < ActiveSupport::TestCase
+class RoomBookingTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

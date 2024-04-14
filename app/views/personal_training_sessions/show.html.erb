@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @personal_training_session %>
+
+<div>
+  <%= link_to "Edit this personal training session", edit_personal_training_session_path(@personal_training_session) %> |
+  <%= link_to "Back to personal training sessions", personal_training_sessions_path %>
+
+  <%= button_to "Destroy this personal training session", @personal_training_session, method: :delete %>
+</div>

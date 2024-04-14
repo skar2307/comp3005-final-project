@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Group classes</h1>
+
+<div id="group_classes">
+  <% @group_classes.each do |group_class| %>
+    <%= render group_class %>
+    <p>
+      <%= link_to "Show this group class", group_class %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New group class", new_group_class_path %>
